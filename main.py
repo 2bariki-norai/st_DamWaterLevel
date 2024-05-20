@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image
+
 import pandas as pd
 from datetime import date# デートタイムモジュールのdate（日付）オブジェクトをインポート
 import sqlite3
@@ -29,7 +29,5 @@ st.text('最新のデータを確認された方は、ぜひ水位登録をお�
 
 st.subheader(f'{lastday} 時点の水位は、{lastlevel}%です')
 
-image = Image.open('./data/4.png')
-st.image(image, width=200)
 
 
