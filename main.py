@@ -31,8 +31,8 @@ nine_hours = datetime.timedelta(hours=9)
 # 現在の日時に9時間を加算
 new_time = now + nine_hours
 # 秒以下を切り捨てる
-new_time_truncated = new_time.replace(second=0, microsecond=0)
-st.caption(new_time)
+now = new_time.replace(second=0, microsecond=0)
+st.caption(now)
 
 
 #いろいろテキストを表示する-----------------------------------------------------------------
