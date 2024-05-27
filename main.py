@@ -23,7 +23,18 @@ con.close()
 
 #st.caption(f'{strToday}')
 now = datetime.datetime.now()
-st.caption(now)
+
+# 現在の日時を取得
+now = datetime.datetime.now()
+# 9時間を表す timedelta オブジェクトを作成
+nine_hours = datetime.timedelta(hours=9)
+# 現在の日時に9時間を加算
+new_time = now + nine_hours
+# 秒以下を切り捨てる
+new_time_truncated = new_time.replace(second=0, microsecond=0)
+st.caption(new_time)
+
+
 #いろいろテキストを表示する-----------------------------------------------------------------
 st.title('農水用ダム水位モニター')
 st.subheader(f'{lastday} 時点の水位は、{lastlevel}%です')
