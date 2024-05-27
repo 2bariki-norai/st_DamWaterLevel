@@ -3,6 +3,7 @@ import streamlit as st
 #from PIL import Image
 import pandas as pd
 from datetime import date# デートタイムモジュールのdate（日付）オブジェクトをインポート
+import datetime
 import sqlite3
 
 strToday = str(date.today())#今日の日付を取得
@@ -20,7 +21,9 @@ for row in list:#ループを回してレコードを書き出す
 c.close()   
 con.close() 
 
-st.caption(f'{strToday}')
+#st.caption(f'{strToday}')
+now = datetime.datetime.now()
+st.caption(now)
 #いろいろテキストを表示する-----------------------------------------------------------------
 st.title('農水用ダム水位モニター')
 st.subheader(f'{lastday} 時点の水位は、{lastlevel}%です')
