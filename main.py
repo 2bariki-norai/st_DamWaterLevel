@@ -6,7 +6,19 @@ from datetime import date# デートタイムモジュールのdate（日付）�
 import datetime
 import sqlite3
 
-strToday = str(date.today())#今日の日付を取得
+#今日の日付を取得
+now = datetime.datetime.now()
+# 現在の日時を取得
+now = datetime.datetime.now()
+# 9時間を表す timedelta オブジェクトを作成
+nine_hours = datetime.timedelta(hours=9)
+# 現在の日時に9時間を加算+グリニッジ標準時対策
+now = now + nine_hours
+# 日付部分を取得
+today_date = now.date()
+
+#strToday = str(date.today())#今日の日付を取得
+strToday = str(today_date)#今日の日付を文字列に変換
 DATABASE = 'water_level_data.db'#データベースの名前を定数に格納
 
 #データベースの最後の行を取得
@@ -22,17 +34,8 @@ c.close()
 con.close() 
 
 #st.caption(f'{strToday}')
-now = datetime.datetime.now()
 
-# 現在の日時を取得
-now = datetime.datetime.now()
-# 9時間を表す timedelta オブジェクトを作成
-nine_hours = datetime.timedelta(hours=9)
-# 現在の日時に9時間を加算
-new_time = now + nine_hours
-# 秒以下を切り捨てる
-now = new_time.replace(second=0, microsecond=0)
-st.caption(now)
+st.caption(today_date)
 
 
 #いろいろテキストを表示する-----------------------------------------------------------------
