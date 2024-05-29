@@ -2,6 +2,8 @@
 import streamlit as st
 import sqlite3
 from datetime import date# デートタイムモジュールのdate（日付）オブジェクトをインポート
+import datetime
+
 DATABASE = 'water_level_data.db'#データベースの名前を定数に格納
 lastday = ""#グローバルなスコープとして変数を作っておく
 st.header('水位の登録')
