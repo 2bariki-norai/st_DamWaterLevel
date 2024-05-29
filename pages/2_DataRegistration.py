@@ -67,7 +67,7 @@ con.close()
 
 # データのインプット--------------------------------------------------------------------------------
 #strtoday = str(date.today())#今日の日付を取得
-survey_day = st.date_input('登録日', date.today())#今日の日付を初期値として登録
+survey_day = st.date_input('登録日', today_date)#今日の日付を初期値として登録
 water_level = st.number_input('水位')#水位を数値として登録
 user_name = st.text_input('名前(記入しなくてもOK)')#登録者名を登録
 
