@@ -16,9 +16,8 @@ nine_hours = datetime.timedelta(hours=9)
 now = now + nine_hours
 # 日付部分を取得
 today_date = now.date()
-
-#strToday = str(date.today())#今日の日付を取得
 strToday = str(today_date)#今日の日付を文字列に変換
+
 DATABASE = 'water_level_data.db'#データベースの名前を定数に格納
 
 #データベースの最後の行を取得
