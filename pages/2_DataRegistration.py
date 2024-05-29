@@ -7,6 +7,28 @@ lastday = ""#グローバルなスコープとして変数を作っておく
 st.header('水位の登録')
 
 
+#今日の日付を取得
+now = datetime.datetime.now()
+# 現在の日時を取得
+now = datetime.datetime.now()
+# 9時間を表す timedelta オブジェクトを作成
+nine_hours = datetime.timedelta(hours=9)
+# 現在の日時に9時間を加算+グリニッジ標準時対策
+now = now + nine_hours
+# 日付部分を取得
+today_date = now.date()
+strtoday = str(today_date)#今日の日付を文字列に変換
+
+
+
+
+
+
+
+
+
+
+
 #データベースを作る------------------------------------------------------------------------------------
 con = sqlite3.connect(DATABASE)#connectメソッドの引数にDATABASEを使ってdbへアクセスするオブジェクト(コネクションオブジェクト)をインスタンス化
 con.execute("CREATE TABLE IF NOT EXISTS water_level_table (survey_day STRING ,water_level STRING ,user_name STRING)")
@@ -42,7 +64,7 @@ con.close()
 
 
 # データのインプット--------------------------------------------------------------------------------
-strtoday = str(date.today())#今日の日付を取得
+#strtoday = str(date.today())#今日の日付を取得
 survey_day = st.date_input('登録日', date.today())#今日の日付を初期値として登録
 water_level = st.number_input('水位')#水位を数値として登録
 user_name = st.text_input('名前(記入しなくてもOK)')#登録者名を登録
