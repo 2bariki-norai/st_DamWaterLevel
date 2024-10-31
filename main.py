@@ -39,11 +39,11 @@ st.caption(today_date)
 
 #いろいろテキストを表示する-----------------------------------------------------------------
 st.title('農水用ダム水位モニター')
-st.subheader(f'{lastday} 時点の水位は、{lastlevel}%です')
-
 st.subheader('お知らせ')
 st.text('当サイトは下記URLへ移転しました。')
-st.text('https://www.innoshimadam.shop/')
+st.subheader('https://www.innoshimadam.shop/')
+
+
 
 
 
